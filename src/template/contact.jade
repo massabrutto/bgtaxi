@@ -1,0 +1,27 @@
+.contact
+	.contact__head
+		.contact__head-item._phone
+			.contact__head-item__ttl._eng For English-speaking
+			.contact__head-item__text +359 878 445 312
+				i.contact__head-item__pic
+		.contact__head-item._phone
+			.contact__head-item__ttl._rus Для русскоговорящих
+			.contact__head-item__text +359 878 445 312
+				i.contact__head-item__pic
+		.contact__head-item._email
+			.contact__head-item__ttl E-mail:
+			a(href="#").contact__head-item__text info@bg-taxi.com
+	form(id="contactForm").contact__form
+		h4.contact__form-ttl You can write to us:
+		.contact__form-col
+			.contact__form-row
+				input(type="text" name="name" placeholder="Name" required).contact__form-input.name-valid
+			.contact__form-row
+				input(type="email" name="email" placeholder="Email" required).contact__form-input.email-valid
+			.contact__form-row
+				input(type="text" name="phone" placeholder="Phone" required).contact__form-input.num-valid
+		.contact__form-col
+			.contact__form-row
+				textarea(name="message" placeholder="Message" maxlength="200" required).contact__form-textarea.text-valid
+			.contact__form-row
+				button.contact__form-btn Write to us

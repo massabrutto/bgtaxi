@@ -1,0 +1,6 @@
+plugin:
+    name: 'dpl.bgtaxisettings::lang.plugin.name'
+    description: 'dpl.bgtaxisettings::lang.plugin.description'
+    author: dpl
+    icon: oc-icon-gear
+    homepage: ''

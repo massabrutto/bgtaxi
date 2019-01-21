@@ -1,0 +1,113 @@
+/* travel */
+.travel {
+  @media (max-width: 1199px) {
+    padding-top: 25px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 50px;
+  }
+  .travel__head {
+    margin: 0 0 45px;
+    padding-right: 15px;
+    overflow: hidden;
+    @media (max-width: 767px) {
+      margin: 0 -15px 20px;
+    }
+  }
+  .travel__media {
+    position: relative;
+    float: left;
+    width: 51%;
+    margin-right: 5%;
+    background-size: cover;
+    background-position: 50%;
+    &:after {
+      content: '';
+      float: left;
+      padding-top: 68.375%;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      margin-bottom: 12px;
+    }
+  }
+  .travel__img {
+    max-width: 100%;
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  .travel__descr {
+    float: right;
+    width: 44%;
+    @media (max-width: 767px) {
+      width: 100%;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+  }
+  .travel__ttl {
+    margin-top: -12px;
+    @media (max-width: 1024px) {
+      //margin-bottom: 10px;
+      font-size: 28px;
+    }
+    @media (max-width: 960px) {
+      //margin-bottom: 10px;
+      font-size: 24px;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  .travel__media__ttl {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 8px 15px;
+    background: rgba(255,255,255,.8);
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+  .travel__media__ttl-text {
+    font-size: 25px;
+    line-height: 1.1;
+    color: #374045;
+    text-transform: uppercase;
+    font-weight: lighter;
+  }
+  .travel__time,
+  .travel__price {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 20px;
+    @media (max-width: 1024px) {
+      font-size: 19px;
+    }
+    @media (max-width: 960px) {
+      font-size: 17px;
+    }
+    @media (max-width: 767px) {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+  }
+  .travel__schedule {
+    margin-bottom: 40px;
+  }
+  .travel__gallery {
+    font-size: 14px;
+    color: #5dbcaf;
+    border-bottom: 1px solid #aad6d0;
+    &:hover {
+      color: #dd5858;
+      border-bottom-color: #e5a5a5;
+    }
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}

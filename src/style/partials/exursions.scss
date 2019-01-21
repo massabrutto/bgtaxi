@@ -1,0 +1,147 @@
+/* excursions */
+.excursions {
+  padding-top: 45px;
+  margin: 0 0 75px -23px;
+  @media (max-width: 1199px) {
+    padding: 45px 10px 0;
+    margin-left: 0;
+    box-sizing: border-box;
+  }
+  @media (max-width: 767px) {
+    padding: 15px 15px 0;
+    margin-bottom: 20px;
+  }
+  .excursions__item {
+    position: relative;
+    width: 280px;
+    margin: 0 0 27px 23px;
+    display: inline-block;
+    vertical-align: top;
+    background: #ffffff;
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,.2);
+    @media (max-width: 1199px) {
+      width: 22.9%;
+      margin: 0 1.5% 2.3% 0;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      margin: 0 1.5% 25px 0;
+    }
+  }
+  .excursions__pic {
+    position: relative;
+    display: block;
+    height: 210px;
+    overflow: hidden;
+    &:hover {
+      .excursions__img {
+        transform: scale(1.03);
+      }
+    }
+    @media (max-width: 1024px) {
+      height: 190px;
+    }
+  }
+  .excursions__img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform .4s;
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  .excursions__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 70%);
+  }
+  .excursions__ttl {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    right: 20px;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: bold;
+    color: #374045;
+    z-index: 2;
+  }
+  .excursions__schedule {
+    padding: 5px 10px;
+    background: #34434c;
+    color: #ffffff;
+    min-height: 42px;
+    box-sizing: border-box;
+  }
+  .excursions__schedule__item {
+    display: block;
+    font-size: 14px;
+    line-height: 1;
+    & + .excursions__schedule__item {
+      margin-top: 4px;
+    }
+  }
+  .excursions__bottom {
+    overflow: hidden;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    @media (max-width: 767px) {
+      padding: 12px 10px;
+    }
+  }
+  .excursions__price {
+    float: left;
+    color: #dd5858;
+    @media (max-width: 1024px) {
+      margin: 0 10px 7px 0;
+    }
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+    }
+  }
+  .excursions__price__adult {
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: bold;
+    @media (max-width: 1199px) {
+      font-size: 15px;
+    }
+  }
+  .excursions__price__children {
+    font-size: 14px;
+    line-height: 1;
+    @media (max-width: 1199px) {
+      font-size: 13px;
+    }
+  }
+  .excursions__more {
+    float: right;
+    padding: 10px 13px 8px;
+    overflow: hidden;
+    border: 1px solid #d9e3ed;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #acb6c1;
+    box-sizing: border-box;
+    transition: color .15s, border-color .15s;
+    &:hover {
+      color: #dd5858;
+      border-color: #f2b8b8;
+    }
+    @media (max-width: 1024px) {
+      float: left;
+    }
+    @media (max-width: 767px) {
+      float: right;
+      margin-left: 50px;
+    }
+  }
+}

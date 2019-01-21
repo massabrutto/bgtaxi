@@ -1,0 +1,48 @@
+title = "excursions"
+url = "/excursions"
+layout = "master"
+is_hidden = 0
+meta_title = "Book exciting trips and excursions from Sunny beach, St.Vlas, Elenite, Nessebar, Ravda."
+meta_description = "Discover the best things to do in Sunny beach Various day trips and night events in Sunny beach Enjoy Khan`s tent and Bulgarian village night. Get off-road adventure with our Jeep or ATV safari Don`t miss exciting Yacht cruise or pirate party. Visit the most beautiful places in Bulgaria."
+seo_keywords = "Rila monastery 2 days, Plovdiv Old town, Sofia capital, Borovets, The Castle of Ravadinovo, Sand festival Bourgas, Burgas Sand fest, St Anastasia Island, Sozopol, Ropotamo river, Old Sozopol, Sozopol boat cruise, Ropotamo boat cruise, Sozopol day out, Apolonia, Holy Mother of God Church,  Jeravna village, Zheravna, Sliven lift, chair lift, The Blue mountains,  Bulgarian Renaissance architecture, ethnographical museum, Bulgarian church, Bulgarian winery, wine taste, Bulgarian village night, Bulgarian folk show, dance on coals, Bulgarian folklore, Bulgarian fire dancing, Veliko Tarnovo, Arbanassi village, mediaeval capital of bulgaria, Balkan Mountains, Kazanlak, the valley of roses, Shipka, Etara, Thracian Kings, Varna, Kamchia river, The Stone forest, Balchik bothanic garden, Aladzha monastery, cave monastery, cape Kaliakra, medieval fortress, boat cruise Nessebar, boat cruise Sunny beach, Sunny beach Yacht picnic, Sunny beach boat, Sunny beach yacht, lazy day out, Pirate party, Pirates of Caribbean, Captain Jacks boat cruise, Pirate games, Aqua nevis club hotel, Party tattoo boat, Romantic yacht sunset, jeep safari, off road adventure, quads, Brashlyan architectural, Bulgarian historical reserve, Jeep safari Strandza, Re-discovery tour, Varna shopping, Bourgas shopping, Old Nessebar, Nessebar discovery, Khan`s tent, Khan`s tent Sunny beach, Khan`s tent night out, Windmill, Khans tent, Sunny beach trip, Sunny beach tours, Sunny beach excursion, Istanbul 2 days, Istanbul 1 day, Istanbul trips, Old city Istanbul, Istanbul by night, Bosphorus boat trip, Dracula tour, Bran Dracula castle, Peles, Sinaia, Mogoshoaia palace, Bucharest 1 day, Romania trip, Romania excursions, Sunny beach water park, Aqua Paradise Nessebar"
+robot_index = "index"
+robot_follow = "follow"
+
+[BgtaxiSettingsComponent]
+
+[ExcursionsListComponent]
+
+[SeoCmsPage]
+==
+{% set arSlider = BgtaxiSettingsComponent.getContent('slider_exp') %}
+{% set sFBLink = BgtaxiSettingsComponent.getContent('fb_link_exp') %}
+{% set arElements = ExcursionsListComponent.getList %}
+<div class="main__inner inner-wrap">
+    <div class="main__inner__head">
+        {% content 'excursions_page_text.htm' %}
+    </div>
+    {% if arElements is not empty %}
+    <div class="excursions">
+        {% for arElement in arElements %}
+            <div class="excursions__item"><a href="{{'excursion'|page({slug:arElement.slug})}}" class="excursions__pic"><img src="{{arElement.image}}" class="excursions__img">
+                <div class="excursions__overlay"></div></a>
+                <div class="excursions__ttl">{{arElement.preview_title}}</div>
+                {% if arElement.start_time_preview is not empty %}
+                    <div class="excursions__schedule">
+                        {% for item in arElement.start_time_preview %}
+                            <time class="excursions__schedule__item">{{item.item}}</time>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <div class="excursions__bottom">
+                    <div class="excursions__price">
+                        <div class="excursions__price__adult">{{ arElement.preview_price }}</div>
+                        <div class="excursions__price__children">{{ arElement.preview_price_2 }}</div>
+                    </div><a href="{{'excursion'|page({slug:arElement.slug})}}" class="excursions__more">Read more</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% partial 'footer' sFBLink=sFBLink sInstLink=sInstLink %}

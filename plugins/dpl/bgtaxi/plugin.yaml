@@ -1,0 +1,32 @@
+plugin:
+    name: 'dpl.bgtaxi::lang.plugin.name'
+    description: 'dpl.bgtaxi::lang.plugin.description'
+    author: dpl
+    icon: oc-icon-taxi
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Bg-taxi
+        url: dpl/bgtaxi/transfers
+        icon: icon-taxi
+        sideMenu:
+            side-menu-item:
+                label: Transfers
+                url: dpl/bgtaxi/transfers
+                icon: icon-taxi
+            side-menu-item2:
+                label: 'Car hire'
+                url: dpl/bgtaxi/carhires
+                icon: icon-car
+            side-menu-item3:
+                label: Excursions
+                url: dpl/bgtaxi/excursions
+                icon: icon-university
+            side-menu-item4:
+                label: Insuarences
+                url: dpl/bgtaxi/insuarences
+                icon: icon-medkit
+            side-menu-item5:
+                label: Articles
+                url: dpl/bgtaxi/articles
+                icon: icon-newspaper-o

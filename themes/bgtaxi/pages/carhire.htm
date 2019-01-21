@@ -1,0 +1,82 @@
+title = "carhire"
+url = "/carhire"
+layout = "master"
+is_hidden = 0
+meta_title = "Rent a car in Bulgaria"
+meta_description = "Book cheap car hire in Bulgaria. We can deliver the best car for you in Bourgas, Sunny beach, Varna or Sofia. Rent a economy, compact or mini-van size vehicles."
+seo_keywords = "Bourgas airport car hire, Sunny beach car hire, St Vlas car hire, Sofia airport car hire, Varna airport car hire, Sunny beach rent a car, Sunny beach rent a car, Varna rent a car, Sofia rent a car, Sofia airport car hire, car hire in Bulgaria, Bourgas airport car rental, cheap car hire in Bulgaria, Bulgaria car rentals"
+robot_index = "index"
+robot_follow = "follow"
+
+[BgtaxiSettingsComponent]
+
+[CarhireListComponent]
+
+[SeoCmsPage]
+==
+{% set sFBLink = BgtaxiSettingsComponent.getContent('fb_link_chp') %}
+{% set sInstLink = BgtaxiSettingsComponent.getContent('inst_link_chp') %}
+{% set popup_link_chp = BgtaxiSettingsComponent.getContent('popup_link_chp') %}
+{% set sDescription = BgtaxiSettingsComponent.getContent('description_chp') %}
+{% set sSideList = BgtaxiSettingsComponent.getContent('side_chp') %}
+{% set side_title_trp = BgtaxiSettingsComponent.getContent('side_title_trp') %}
+{% set side_title_chp = BgtaxiSettingsComponent.getContent('side_title_chp') %}
+{% set arList = CarhireListComponent.getList %}
+<div class="main__inner inner-wrap">
+    <div class="main__inner__head">
+        {% content 'car_hire_page_text.htm' %}
+    </div>
+    <div class="content-wrap">
+        <div class="content">
+            {% if arList is not empty %}
+            <div class="car">
+                {% for arCar in arList %}
+                <div class="car__item">
+                    <h2 class="car__item__ttl">{{arCar.model}}</h2>
+                    <div class="car__item__media">
+                        <div style="background-image: url('{{arCar.preview_image}}')" class="car__item__pic"></div>
+                    </div>
+                    <div class="car__item__descr">
+                        {% if arCar.icons is not empty %}
+                            <div class="car__item__icons">
+                                {% for arIcon in arCar.icons  %}
+                                    <div class="car__item__ico _{{arIcon.types}}">{% if arIcon.tooltip is not empty %}<i class="car__item__ico__tooltip">{{arIcon.tooltip}}</i>{% endif %}{% if arIcon.count is not empty %}<i class="car__item__ico__count">{{arIcon.count}}</i>{% endif %}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        {% if arCar.details is not empty %}
+                            <h6 class="car__item__list-ttl">Price includes:</h6>
+                            <ul class="car__item__list">
+                            {% for arDetail in arCar.details %}
+                                <li class="car__item__list-item">{{arDetail.deatail}}</li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                    <a href="#popup" class="car__item__link btn-popup">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 15" class="car__item__link-svg">
+                            <path d="M5.8 6.4c-.2-.2-.6-.2-.8 0-.2.2-.2.6 0 .7l3.4 3.2 7.4-6.9c.2-.2.2-.5 0-.7-.2-.2-.6-.2-.8 0L8.4 8.9 5.8 6.4zm10.1.3c-.1-.3-.4-.4-.6-.2l-.3.2c-.1.1-.1.2-.1.3v.5c0 3.7-3.4 6.7-7.4 6.5-3.4-.2-6.2-2.8-6.4-6C.8 4.2 4 1 8 1c1.6 0 3.1.5 4.3 1.4.2.1.4.1.5-.1l.2-.2c.1-.2.1-.4-.1-.5C11.5.5 9.6-.1 7.6 0 3.5.2.2 3.3 0 7.1c-.3 4.5 3.7 8.2 8.6 7.9 3.7-.3 6.8-3 7.3-6.4.1-.7.1-1.3 0-1.9z"></path>
+                        </svg><span class="car__item__link-text">{{popup_link_chp}}</span></a>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="sidebar">
+            <div class="fixed-info"><a href="{{'contacts'|page}}" class="btn book" target="_blank">Book now</a>
+                <h5 class="fixed-info__ttl">{{ side_title_chp }}</h5>
+                {% if sSideList is not empty %}
+                    <ul class="fixed-info__list">
+                        {% for sItem in sSideList  %}
+                            <li>{{sItem.item}}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% partial 'footer' sFBLink=sFBLink sInstLink=sInstLink %}
+<div id="popup" class="white-popup mfp-hide">
+    {% content 'car_hire_popup.htm' %}
+</div>

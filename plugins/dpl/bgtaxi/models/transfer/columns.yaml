@@ -1,0 +1,14 @@
+columns:
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    active:
+        label: Active
+        type: switch
+        sortable: true
+    sort_order:
+        label: 'Sort order'
+        type: number
+        invisible: true

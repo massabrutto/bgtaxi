@@ -1,0 +1,10 @@
+name: Insuarences
+form: $/dpl/bgtaxi/models/insurance/fields.yaml
+modelClass: Dpl\Bgtaxi\Models\Insurance
+defaultRedirect: dpl/bgtaxi/insuarences
+create:
+    redirect: 'dpl/bgtaxi/insuarences/update/:id'
+    redirectClose: dpl/bgtaxi/insuarences
+update:
+    redirect: dpl/bgtaxi/insuarences
+    redirectClose: dpl/bgtaxi/insuarences

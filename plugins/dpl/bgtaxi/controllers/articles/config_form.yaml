@@ -1,0 +1,10 @@
+name: Articles
+form: $/dpl/bgtaxi/models/article/fields.yaml
+modelClass: Dpl\Bgtaxi\Models\Article
+defaultRedirect: dpl/bgtaxi/articles
+create:
+    redirect: 'dpl/bgtaxi/articles/update/:id'
+    redirectClose: dpl/bgtaxi/articles
+update:
+    redirect: dpl/bgtaxi/articles
+    redirectClose: dpl/bgtaxi/articles

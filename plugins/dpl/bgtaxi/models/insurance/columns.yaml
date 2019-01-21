@@ -1,0 +1,13 @@
+columns:
+    preview_title:
+        label: 'Preview title'
+        type: text
+        searchable: true
+        sortable: true
+    active:
+        label: Active
+        type: switch
+    'Sort order':
+        label: 'Sort order'
+        type: number
+        invisible: true

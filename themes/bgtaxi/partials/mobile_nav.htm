@@ -1,0 +1,109 @@
+[viewBag]
+
+[staticMenu topMenuDesktop]
+code = "top_menu"
+
+[TransfersListComponent]
+
+[BgtaxiSettingsComponent]
+
+[MailComponent]
+
+==
+{% set arTopMenuDesktop = topMenuDesktop.menuItems %}
+{% set arTransfers = TransfersListComponent.getList %}
+{% set title_cntp = BgtaxiSettingsComponent.getContent('title_cntp') %}
+{% set contact_form_title_cntp = BgtaxiSettingsComponent.getContent('contact_form_title_cntp') %}
+{% set inst_link_cntp = BgtaxiSettingsComponent.getContent('inst_link_cntp') %}
+{% set fb_link_cntp = BgtaxiSettingsComponent.getContent('fb_link_cntp') %}
+{% set vk_link_cntp = BgtaxiSettingsComponent.getContent('vk_link_cntp') %}
+{% set email_link_cntp = BgtaxiSettingsComponent.getContent('email_link_cntp') %}
+{% set phines_left_title_cntp = BgtaxiSettingsComponent.getContent('phines_left_title_cntp') %}
+{% set phines_left_right_cntp = BgtaxiSettingsComponent.getContent('phines_left_right_cntp') %}
+{% set phones_cntp_left = BgtaxiSettingsComponent.getContent('phones_cntp_left') %}
+{% set phones_cntp_right = BgtaxiSettingsComponent.getContent('phones_cntp_right') %}
+{% set arSideList = BgtaxiSettingsComponent.getContent('side_list_trp') %}
+{% set sSideList = BgtaxiSettingsComponent.getContent('side_chp') %}
+{% set side_title_chp = BgtaxiSettingsComponent.getContent('side_title_chp') %}
+{% set side_title_trp = BgtaxiSettingsComponent.getContent('side_title_trp') %}
+<div class="mobile-nav">
+  <ul class="mobile-nav__list">
+    {% if arTopMenuDesktop is not empty %}
+    {% for arItem in arTopMenuDesktop %}
+    {% if arItem.code == 'transfers' %}
+    <li class="mobile-nav__item drop-item"><span class="mobile-nav__link">Airport transfer</span>
+      {% if arTransfers is not empty %}
+      <ul class="mobile-nav-drop">
+        {% for arTransfer in arTransfers %}
+        <li class="mobile-nav-drop__item"><a href="{{'transfer'|page({slug:arTransfer.slug})}}" class="mobile-nav-drop__link">{{arTransfer.title}}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+    {% else %}
+    <li class="mobile-nav__item {{ arItem.isActive ? '_active' : '' }}"><a href="{{arItem.url}}" class="mobile-nav__link">{{arItem.title}}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  </ul>
+</div>
+<!--{% if this.page.title == 'transfer' or this.page.title == 'carhire' %}-->
+<div class="fixed-info-mobile"><a class="btn book book-mobile">Book now</a></div>
+<!--{% endif %}-->
+<div class="mobile-book">
+  <button class="mobile-book__close">×</button>
+  {% if this.page.title == 'carhire' %}
+    <h4>{{ side_title_chp }}</h4>
+    {% if sSideList is not empty %}
+    <ul>
+      {% for sItem in sSideList  %}
+      <li>{{sItem.item}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  {% elseif this.page.title == 'transfer' %}
+    <h4>{{ side_title_trp }}</h4>
+    {% if arSideList is not empty %}
+    <ul>
+      {% for arLine in arSideList %}
+      <li>{{arLine.line}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  {% endif  %}
+  <h5 class="mobile-book__sub-title">You can call us</h5>
+  {% if phones_cntp_left is not empty %}
+  {% for item in phones_cntp_left %}
+  <p class="mobile-book__phone">{{item.phone}}</p>
+  {% endfor %}
+  {% endif %}
+  {% if phones_cntp_right is not empty %}
+  {% for item in phones_cntp_right %}
+  <p class="mobile-book__phone">{{item.phone}}</p>
+  {% endfor %}
+  {% endif %}
+  <div class="contact">
+    <form id="bookForm" class="contact__form" method="post" action="/contact">
+      <input type="hidden" name="page" value="{{ url_current() }}">
+      <div class="contact__form-col">
+        <div class="contact__form-row">
+          <input type="text" name="name" placeholder="Name" required class="contact__form-input name-valid">
+        </div>
+        <div class="contact__form-row">
+          <input type="email" name="email" placeholder="Email" required class="contact__form-input email-vali">
+        </div>
+        <div class="contact__form-row">
+          <input type="text" name="phone" placeholder="Phone" required class="contact__form-input num-valid">
+        </div>
+      </div>
+      <div class="contact__form-col">
+        <div class="contact__form-row">
+          <textarea name="message2" placeholder="Message" required class="contact__form-textarea text-valid"></textarea>
+        </div>
+        <div class="contact__form-row">
+          <button class="contact__form-btn">Send</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

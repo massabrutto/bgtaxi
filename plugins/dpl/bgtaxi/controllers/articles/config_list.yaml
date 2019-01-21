@@ -1,0 +1,13 @@
+title: Articles
+modelClass: Dpl\Bgtaxi\Models\Article
+list: $/dpl/bgtaxi/models/article/columns.yaml
+recordUrl: 'dpl/bgtaxi/articles/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+defaultSort:
+    column: sort_order
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

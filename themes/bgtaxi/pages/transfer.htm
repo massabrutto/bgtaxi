@@ -1,0 +1,63 @@
+title = "transfer"
+url = "/transfer/:slug"
+layout = "master"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[BgtaxiSettingsComponent]
+
+[TransferComponent]
+==
+{% set arTransfer = TransferComponent.getItem %}
+{% set sFBLink = BgtaxiSettingsComponent.getContent('fb_link_trp') %}
+{% set sInstLink = BgtaxiSettingsComponent.getContent('inst_link_trp') %}
+{% set arSideList = BgtaxiSettingsComponent.getContent('side_list_trp') %}
+{% set side_title_trp = BgtaxiSettingsComponent.getContent('side_title_trp') %}
+{% set sFooterListTitle = BgtaxiSettingsComponent.getContent('footer_list_title_tpr') %}
+{% set arFooterList = BgtaxiSettingsComponent.getContent('footer_list_list_trp') %}
+<div class="main__inner inner-wrap">
+    <div class="main__inner__head">
+        <div class="main__inner__head__descr">
+            <h1>{{arTransfer.title}}</h1>
+            {{arTransfer.description|raw}}
+        </div>
+        <div style="background-image: url('{{arTransfer.image}}')" class="main__inner__head__pic"></div>
+    </div>
+    <div class="content-wrap _pricing">
+        <div class="content">
+            <div class="pricing">
+                <div class="pricing__table-wrap">
+                    {{arTransfer.content|raw}}
+                </div>
+                <div class="pricing__show-more"><span class="pricing__show-more__text">Show more</span></div>
+                <div class="pricing__note">
+                    <p>{{arTransfer.link_text}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="fixed-info _pricing"><a href="{{'contacts'|page}}" class="btn book" target="_blank">Book now</a>
+                <h5 class="fixed-info__ttl">{{ side_title_trp }}</h5>
+                {% if arSideList is not empty %}
+                    <ul class="fixed-info__list">
+                        {% for arLine in arSideList %}
+                            <li>{{arLine.line}}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="about"><i class="about__pic"></i>
+        <h2 class="about__ttl">{{sFooterListTitle}}</h2>
+        {% if arFooterList is not empty %}
+            <ul class="about__list">
+                {% for arLine in arFooterList %}
+                    <li class="about__list-item">{{arLine.line}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
+{% partial 'footer' sFBLink=sFBLink sInstLink=sInstLink %}

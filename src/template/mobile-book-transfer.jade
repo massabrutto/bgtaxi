@@ -1,0 +1,23 @@
+.mobile-book
+   button.mobile-book__close ×
+   h4.mobile-book__title Transfer order
+   p
+      b Full flight details required:
+      |  Leading name, Arrival /departure date and time, Flight numbers, Party size (Adults and children), Destination and hotel, Contact mobile number
+   h5.mobile-book__sub-title You can call us
+   p.mobile-book__phone  +359 (878) 445-312
+   p.mobile-book__phone  +359 (877) 359-326
+   .contact
+      form(id="bookForm").contact__form
+         .contact__form-col
+            .contact__form-row
+               input(type="text" name="name" placeholder="Name" required).contact__form-input.name-valid
+            .contact__form-row
+               input(type="email" name="email" placeholder="Email" required).contact__form-input.email-vali
+            .contact__form-row
+               input(type="text" name="phone" placeholder="Phone" required).contact__form-input.num-valid
+         .contact__form-col
+            .contact__form-row
+               textarea(name="message" placeholder="Full flight details" required).contact__form-textarea.text-valid
+            .contact__form-row
+               button.contact__form-btn Send

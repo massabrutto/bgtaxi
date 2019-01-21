@@ -1,0 +1,119 @@
+[viewBag]
+
+[ArticleComponent]
+[ExcursionComponent]
+[InsuaranceComponent]
+[TransferComponent]
+[BgtaxiSettingsComponent]
+==
+{% if this.page.title == 'article' %}
+{% set arElement = ArticleComponent.getItem %}
+{% endif %}
+{% if this.page.title == 'excursion' %}
+{% set arElement = ExcursionComponent.getItem %}
+{% endif %}
+{% if this.page.title == 'insurance' %}
+{% set arElement = InsuaranceComponent.getItem %}
+{% endif %}
+{% if this.page.title == 'transfer' %}
+{% set arElement = TransferComponent.getItem %}
+{% endif %}
+{% if this.page.title == 'carhire' %}
+{% set carHireList = CarhireListComponent.getList %}
+{% endif %}
+{% if this.page.title == 'index' %}
+{% set title_mp = BgtaxiSettingsComponent.getContent('title_mp') %}
+{% set description_mp = BgtaxiSettingsComponent.getContent('description_mp') %}
+{% if BgtaxiSettingsComponent.getContent('slider_mp') is not empty %}
+{% set slider_mp = BgtaxiSettingsComponent.getContent('slider_mp') %}
+{% set og_image = slider_mp|first  %}
+{% endif %}
+{% endif %}
+{% set _ga = BgtaxiSettingsComponent.getContent('_ga') %}
+{% set _ym = BgtaxiSettingsComponent.getContent('_ym') %}
+<head lang="ru-RU">
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="HandheldFriendly" content="True">
+
+        {% if this.page.title == 'index' %}
+            <meta property="og:type" content="article">
+            <meta property="og:url" content="{{url_current()}}">
+            <meta property="og:title" content="{{title_mp}}">
+            {% if og_image is not empty %}
+            <meta property="og:image" content="{{url('/')}}{{og_image.slider_image|media}}">
+            {% endif %}
+        {% elseif this.page.title == 'carhire' %}
+            <meta property="og:type" content="article">
+            <meta property="og:url" content="{{url_current()}}">
+            <meta property="og:title" content="">
+            <meta property="og:description" content="">
+            {% if carHireList is not empty %}
+            {% set arCar = carHireList[0] %}
+            <meta property="og:image" content="{{url('/')}}{{arCar.preview_image}}">
+            {% endif %}
+        {% elseif this.page.title == 'excursions' %}
+            {% set arElements = ExcursionsListComponent.getList %}
+                {% if arElements is not empty %}
+                <meta property="og:type" content="article">
+                <meta property="og:url" content="{{url_current()}}">
+                <meta property="og:title" content="{{arElements[0].preview_title}}">
+                <meta property="og:description" content="">
+                {% if arElements[0].image is not empty %}
+                <meta property="og:image" content="{{url('/')}}{{arElements[0].image}}">
+                {% endif %}
+                {% endif %}
+        {% elseif this.page.title == 'insurances' %}
+            {% set arElements = InsuarancesListComponent.getList %}
+            {% if arElements is not empty %}
+            <meta property="og:type" content="article">
+            <meta property="og:url" content="{{url_current()}}">
+            <meta property="og:title" content="{{arElements[0].preview_title}}">
+            <meta property="og:description" content="">
+            {% if arElements[0].image is not empty %}
+            <meta property="og:image" content="{{url('/')}}{{arElements[0].image}}">
+            {% endif %}
+            {% endif %}
+        {% elseif this.page.title == 'articles' %}
+            {% set arElements = ArticlesListComponent.getList %}
+            {% if arElements is not empty %}
+            <meta property="og:type" content="article">
+            <meta property="og:url" content="{{url_current()}}">
+            <meta property="og:title" content="{{arElements[0].preview_title}}">
+            <meta property="og:description" content="">
+            {% if arElements[0].image is not empty %}
+            <meta property="og:image" content="{{url('/')}}{{arElements[0].image}}">
+            {% endif %}
+            {% endif %}
+        {% else %}
+            <meta property="og:type" content="article">
+            <meta property="og:url" content="{{url_current()}}">
+            <meta property="og:title" content="{{arElement.title}}">
+            <meta property="og:description" content="{{arElement.preview_description|raw}}">
+            {% if arElement.preview_image is not empty %}
+            <meta property="og:image" content="{{url('/')}}{{arElement.preview_image}}">
+            {% elseif arElement.image is not empty %}
+            <meta property="og:image" content="{{url('/')}}{{arElement.image}}">
+            {% endif %}
+        {% endif %}
+
+
+    {% if arElement.seo_item_title is not empty %}
+    <title>{{arElement.seo_item_title}}</title>
+    <meta name="description" content="{{arElement.seo_item_description}}">
+    <meta name="keywords" content="{{arElement.seo_item_keywords}}">
+    {% else %}
+    {% component 'SeoCmsPage' %}
+    {% endif %}
+
+    <link rel="stylesheet" href="{{'assets/css/main.css'|theme}}">
+    <link rel="stylesheet" href="https://bst1.gismeteo.ru/assets/flat-ui/legacy/css/informer.min.css">
+    <link href="favicon.ico" rel="shortcut icon">
+    {% if _ga is not empty %}
+        {{_ga|raw}}
+    {% endif %}
+    {% if _ga is not empty %}
+        {{_ym|raw}}
+    {% endif %}
+</head>

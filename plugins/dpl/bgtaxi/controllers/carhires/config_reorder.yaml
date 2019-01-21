@@ -1,0 +1,5 @@
+title: Carhires
+modelClass: Dpl\Bgtaxi\Models\Carhire
+nameFrom: model
+toolbar:
+    buttons: reorder_toolbar

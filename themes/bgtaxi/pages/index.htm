@@ -1,0 +1,128 @@
+title = "index"
+url = "/"
+layout = "master"
+is_hidden = 0
+meta_title = "Aiport taxi transfers from Bourgas, Varna and Sofia, Car hire, Trips and excursions in Bulgaria!"
+meta_description = "We are happy to arrange your airport taxi transfers, car hire or various trips and excursions in Bulgaria. Meet and great service in Bourgas, Varna and Sofia airport. Cheap car hire service. Day trips to Bulgaria, Romania, Turkey, Makedonia, Greece. Property insurance."
+seo_keywords = "Bourgas airport, Burgas, Bourgas taxis, Burgas airport taxis, Bourgas airport transfer, Bourgas airport Sunny beach taxi, Bourgas airport car hire, Burgas taxi transfer, Sunny beach taxis, Sunny beach airport transfer, taxi to Sunny beach Hotels, taxi Bourgas airport, taxi Varna airport, taxi Sofia airport, taxi Istanbul airport, Sunny beach car hire, rent a car, cheap car hire, Bulgaria car hire, St Vlas car hire, taxi to Sunny beach, taxi to St Vlas, taxi to Sozopol, Santa Marina taxi transfer, Aqua Nevis taxi transfer, Bourgas - Sunny beach, Bourgas - St Vlas, Bourgas - Sozopol, Sunny beach trips, Sunny beach tours, Sunny beach excursions, Khan`s tent night, Bulgarian village night, Bulgaria, Sunny beach, St Vlas, Sozopol, Varna airport, Sofia airport, Varna airport taxis, Varna airport taxi transfer, Varna airport car hire, Sofia airport taxi transfer, Sofia taxis, Bansko, Bansko ski taxis, Bansko airport taxi, Bansko airport transfer, Bansko airport transfer, Sofia - Bansko taxi, Sofia - Bansko airport transfer, taxi Borovets, Sofia - Borovets taxis, Sofia Borovets airport transfer, ski transfers Bulgaria, Sofia - Sunny beach taxi transfer, Bourgas airport - Sozopol airport taxi, Varna airport - Golden Sands airport transfer, Ataturk airport taxi transfer, Istanbul airport taxi transfer, Bulgaria taxi, Bulgaria car hire service, Sofia rent a car, Varna rent a car, Sunny beach rent a car, St Vlas rent a car"
+robot_index = "index"
+robot_follow = "follow"
+
+[BgtaxiSettingsComponent]
+
+[ArticlesListComponent]
+
+[SeoCmsPage]
+==
+{% set arSlider = BgtaxiSettingsComponent.getContent('slider_mp') %}
+{% set sFBLink = BgtaxiSettingsComponent.getContent('fb_link_mp') %}
+{% set sInstLink = BgtaxiSettingsComponent.getContent('inst_link_mp') %}
+{% set sTitle = BgtaxiSettingsComponent.getContent('title_mp') %}
+{% set sDescription = BgtaxiSettingsComponent.getContent('description_mp') %}
+{% set arArticles = ArticlesListComponent.getIndexList %}
+{% set airport_ttl_mp = BgtaxiSettingsComponent.getContent('airport_ttl_mp') %}
+{% set airport_slogan_mp = BgtaxiSettingsComponent.getContent('airport_slogan_mp') %}
+{% set airport_discount_mp = BgtaxiSettingsComponent.getContent('airport_discount_mp') %}
+{% set airport_image_mp = BgtaxiSettingsComponent.getContent('airport_image_mp') %}
+{% set airport_href_mp = BgtaxiSettingsComponent.getContent('airport_href_mp') %}
+{% set excursions_ttl_mp = BgtaxiSettingsComponent.getContent('excursions_ttl_mp') %}
+{% set excursions_slogan_mp = BgtaxiSettingsComponent.getContent('excursions_slogan_mp') %}
+{% set excursions_discount_mp = BgtaxiSettingsComponent.getContent('excursions_discount_mp') %}
+{% set excursions_image_mp = BgtaxiSettingsComponent.getContent('excursions_image_mp') %}
+{% set excursions_href_mp = BgtaxiSettingsComponent.getContent('excursions_href_mp') %}
+{% set carhire_ttl_mp = BgtaxiSettingsComponent.getContent('carhire_ttl_mp') %}
+{% set carhire_slogan_mp = BgtaxiSettingsComponent.getContent('carhire_slogan_mp') %}
+{% set carhire_discount_mp = BgtaxiSettingsComponent.getContent('carhire_discount_mp') %}
+{% set carhire_image_mp = BgtaxiSettingsComponent.getContent('carhire_image_mp') %}
+{% set carhire_href_mp = BgtaxiSettingsComponent.getContent('carhire_href_mp') %}
+{% set vk_link_cntp = BgtaxiSettingsComponent.getContent('vk_link_cntp') %}
+{% set email_link_cntp = BgtaxiSettingsComponent.getContent('email_link_cntp') %}
+{% set phones_cntp = BgtaxiSettingsComponent.getContent('phones_cntp') %}
+<div class="main__inner inner-wrap">
+    <div class="slider">
+        {% if sTitle is not empty %}<h2 class="slider__ttl">{{sTitle}}</h2>{% endif %}
+        {% if arSlider is not empty %}
+            <div class="slider__inner owl-carousel">
+                {% for arImage in arSlider %}
+                    <div style="background-image: url('{{arImage.slider_image|media}}')" class="slider__pic item"></div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    <div class="category">
+        <a href="{{airport_href_mp}}" class="category__item">
+            {% if airport_discount_mp is not empty %}
+                <div class="category__discount">{{airport_discount_mp}}</div>
+            {% endif %}
+            <div class="category__item__pic">
+                <div style="background-image: url('{{airport_image_mp|media}}')" class="category__item__img"></div>
+            </div>
+            <h5 class="category__item__ttl">{{airport_ttl_mp}}</h5>
+            <div class="category__item__slogan">{{airport_slogan_mp}}</div>
+        </a>
+        <a href="{{excursions_href_mp}}" class="category__item _discount">
+            {% if excursions_discount_mp is not empty %}
+                <div class="category__discount">{{excursions_discount_mp}}</div>
+            {% endif %}
+            <div class="category__item__pic">
+                <div style="background-image: url('{{excursions_image_mp|media}}')" class="category__item__img"></div>
+            </div>
+            <h5 class="category__item__ttl">{{excursions_ttl_mp}}</h5>
+            <div class="category__item__slogan">{{excursions_slogan_mp}}</div>
+        </a>
+        <a href="{{carhire_href_mp}}" class="category__item">
+            {% if carhire_discount_mp is not empty %}
+                <div class="category__discount">{{carhire_discount_mp}}</div>
+            {% endif %}
+            <div class="category__item__pic">
+                <div style="background-image: url('{{carhire_image_mp|media}}')" class="category__item__img"></div>
+            </div>
+            <h5 class="category__item__ttl">{{carhire_ttl_mp}}</h5>
+            <div class="category__item__slogan">{{carhire_slogan_mp}}</div>
+        </a>
+        <div class="category__item _info">
+            <div class="category__email">
+                <div class="category__email__pic">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" viewbox="0 0 26 20" class="category__email__svg">
+                        <path d="M25.395.613c-.37-.382-.892-.623-1.462-.623H2.067c-.57 0-1.09.24-1.462.623-.372.38-.607.916-.607 1.5v15.773c0 .585.235 1.12.607 1.5.37.382.892.623 1.462.623h21.866c.57 0 1.09-.242 1.462-.624.372-.38.607-.916.607-1.5V2.114c0-.585-.235-1.12-.607-1.5zM24 15.995l-6.793-6.188L24 2.997v12.998zm-22-14h22c.08 0 .083-.47.14-.413.007.005-.145.407-.14.414L14.415 10.8c-.303.288-.728.444-1.16.444-.416 0-.824-.144-1.124-.414L2 1.996c.004-.004.185.44 0 0 .06-.058-.08 0 0 0zm0 14v-13l7.202 6.812L2 15.995zm0 2l8.098-7.382 1.253 1.126c.54.483 1.227.714 1.904.714.703 0 1.413-.248 1.96-.764l1.12-1.058 7.61 7.187c-.004 0 .06.177.055.177H2z"></path>
+                    </svg>
+                </div><a href="{{email_link_cntp}}" class="category__email__link">{{email_link_cntp}}</a>
+            </div>
+            <div class="category__phone">
+                <div class="category__phone__pic">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="27" viewbox="0 0 19 27" class="category__phone__svg">
+                        <path d="M15.04-.946H3.96C1.774-.946.002.814.002 2.984V23.07C.002 25.24 1.774 27 3.96 27h11.08c2.186 0 3.958-1.76 3.958-3.93V2.984c0-2.17-1.772-3.93-3.958-3.93zm2.55 24.015c0 1.398-1.142 2.532-2.55 2.532H3.96c-1.408 0-2.55-1.134-2.55-2.533V2.984c0-1.4 1.142-2.533 2.55-2.533h11.08c1.408 0 2.55 1.134 2.55 2.533V23.07zM13.78 2.546H5.22c-.94 0-1.7.756-1.7 1.688v14.787c0 .933.76 1.69 1.7 1.69h8.56c.94 0 1.7-.757 1.7-1.69V4.236c0-.933-.76-1.69-1.7-1.69zm.293 16.476c0 .16-.132.29-.293.29H5.22c-.162 0-.293-.13-.293-.29V4.236c0-.16.132-.29.293-.29h8.56c.16 0 .293.13.293.29v14.787zm-4.345 2.845c-.646 0-1.17.52-1.17 1.16 0 .642.524 1.162 1.17 1.162.646 0 1.17-.52 1.17-1.16 0-.642-.524-1.162-1.17-1.162z"></path>
+                    </svg>
+                </div>
+                {% if phones_cntp is not empty %}
+                    {% for phone in phones_cntp %}
+                        <div class="category__phone__text">{{phone.phone}}</div>
+                    {% endfor %}
+                {% endif %}
+            </div><a href="{{'contacts'|page}}" class="category__info-btn">OR WRITE to US</a>
+        </div>
+    </div>
+    <div class="main__inner-row">
+        <div class="benefits">
+    	{% content 'main_page_text.htm' %}
+        </div>
+        {% if arArticles is not empty %}
+        <div class="articles">
+            <div class="articles__inner">
+                {% for arArticle in arArticles %}
+                <a href="{{'article'|page({slug:arArticle.slug})}}" class="articles__item">
+                    <div class="articles__pic-wrap">
+                    <div style="background-image:url('{{arArticle.image}}')" class="articles__pic"></div>
+                    </div>
+                <div class="articles__descr">
+                    <h5 class="articles__ttl">{{arArticle.preview_title}}</h5>
+                    <div class="articles__text">{{arArticle.preview_description|raw}}</div>
+                </div></a>
+                {% endfor %}
+            </div>
+            <div class="articles__bottom"><a href="{{'articles'|page}}" class="articles__link"><span class="articles__link__text">Other articles</span></a></div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% partial 'footer' sFBLink=sFBLink sInstLink=sInstLink %}

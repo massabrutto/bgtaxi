@@ -1,0 +1,15 @@
+doctype html
+html
+    include template/jade/head.jade
+    body.index
+        include template/head.jade
+        main.main
+            .main__inner.inner-wrap
+                include template/slider.jade
+                include template/category.jade
+                .main__inner-row
+                    include template/benefits.jade
+                    include template/articles.jade
+            include template/footer.jade
+        include template/mobile-menu
+        include template/jade/scripts.jade

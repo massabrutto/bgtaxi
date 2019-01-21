@@ -1,0 +1,80 @@
+title = "insurance"
+url = "/insurance/:slug"
+layout = "master"
+is_hidden = 0
+meta_title = "Insurance in Bulgaria"
+robot_index = "index"
+robot_follow = "follow"
+
+[BgtaxiSettingsComponent]
+
+[InsuaranceComponent]
+
+[InsuarancesListComponent]
+==
+{% set arSlider = BgtaxiSettingsComponent.getContent('slider_insp') %}
+{% set sFBLink = BgtaxiSettingsComponent.getContent('fb_link_insp') %}
+{% set arElement = InsuaranceComponent.getItem %}
+{% set arElements = InsuarancesListComponent.getList %}
+<main class="main">
+    <div class="main__inner inner-wrap">
+        <div class="content-wrap">
+            <div class="content">
+                <div class="travel">
+                    <div class="travel__head">
+                        {% if arElement.image is not empty %}
+                        <div style="background-image: url('{{arElement.image}}')" class="travel__media">
+                            <!--img.travel__img(src="../assets/img/temp/pic-1.jpg", alt="bulgaria-pic")-->
+                            <div class="travel__media__ttl"><span class="travel__media__ttl-text">{{arElement.image.description}}</span></div>
+                        </div>
+                        {% endif %}
+                        <div class="travel__descr">
+                            <h1 class="travel__ttl">{{arElement.title}}</h1>
+                            {% if arElement.start_time is not empty %}
+                            {% for item in arElement.start_time %}
+                            <time class="travel__time">{{item.item}}</time>
+                            {% endfor %}
+                            {% endif %}
+                            <div class="travel__price">{{arElement.price}}</div>
+                        </div>
+                    </div>
+                </div>
+                {{arElement.description|raw}}
+                <div class="social-links">
+                    <h6 class="social-links__ttl">Share with:</h6>
+                    <div class="social-likes">
+                        <div title="Share on Facebook" class="facebook">Facebook</div>
+                        <div title="Share on Twitter" class="twitter">Twitter</div>
+                        <div title="Share on Vkontakte" class="vkontakte">Vkontakte</div>
+                        <div class="plusone" title="Share link on Google+">Google+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar">
+            {% if arElement.gallery %}
+                <div class="gallery">
+                    {% for image in arElement.gallery %}
+                    <a href="{{image}}" style="background-image: url('{{image}}')" class="gallery__link"></a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+                <div class="fixed-info"><a href="{{'contacts'|page}}" class="btn book" target="_blank">Book now</a>
+                {% if arElements is not empty %}
+                <div class="page-navigation">
+                    {% for arElementInList in arElements  %}
+                    {% if arElementInList.slug == arElement.slug %}
+                    {% if loop.index > 1 and arElements[loop.index0 - 1] is not empty %}
+                    <a href="{{'insurance'|page({slug:arElements[loop.index0 - 1].slug})}}" class="page-navigation__prev">Prev</a>
+                    {% endif %}
+                    {% if loop.index != loop.length and arElements[loop.index0 + 1] is not empty %}
+                    <a href="{{'insurance'|page({slug:arElements[loop.index0 + 1].slug})}}" class="page-navigation__next">Next</a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% partial 'footer' sFBLink=sFBLink sInstLink=sInstLink %}
+</main>

@@ -1,0 +1,20 @@
+columns:
+    model:
+        label: Model
+        type: text
+        searchable: true
+        sortable: true
+    reg_num:
+        label: 'Reg number'
+        type: text
+        searchable: true
+        sortable: true
+    active:
+        label: Active
+        type: switch
+        searchable: true
+        sortable: true
+    sort_order:
+        label: 'Sort order'
+        type: number
+        invisible: true

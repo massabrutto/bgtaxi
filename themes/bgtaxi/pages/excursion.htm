@@ -1,0 +1,82 @@
+title = "excursion"
+url = "/excursion/:slug"
+layout = "master"
+is_hidden = 0
+meta_title = "Trips and excursions from Sunny beach, St Vlas, Elenite, Nessebar, Ravda"
+meta_description = "Book exciting tours in Bulgaria, Romania, Turkey, Greece. Enjoy various trips from Sunny beach. Don`t miss Khan`s tent or Bulgarian village night. Get off-road adventure with Jeep safari or Quads. Boat events like Picnic on a Yacht or Captain Jack`s. Visit historical places in Bulgaria."
+seo_keywords = "Rila monastery 2 days, Plovdiv Old town, Bachkovo monastary, Sofia capital, Borovets, The Castle of Ravadinovo, Sand festival Bourgas, Burgas Sand fest, St Anastasia Island, Sozopol, Ropotamo river, Old Sozopol, Sozopol boat cruise, Ropotamo boat cruise, Sozopol day out, Apolonia, Holy Mother of God Church,  Jeravna village, Zheravna, Sliven lift, chair lift, The Blue mountains,  Bulgarian Renaissance architecture, ethnographical museum, Bulgarian church, Bulgarian winery, wine taste, Bulgarian village night, Bulgarian folk show, dance on coals, Bulgarian folklore, Bulgarian fire dancing, Veliko Tarnovo, Arbanassi village, mediaeval capital of bulgaria, Balkan Mountains, Kazanlak, the valley of roses, Shipka, Etara, Thracian Kings, Varna, Kamchia river, The Stone forest, Balchik bothanic garden, Aladzha monastery, cave monastery, cape Kaliakra, medieval fortress, boat cruise Nessebar, boat cruise Sunny beach, Sunny beach Yacht picnic, Sunny beach boat, Sunny beach yacht, lazy day out, Pirate party, Pirates of Caribbean, Captain Jacks boat cruise, Pirate games, Aqua nevis club hotel, Party tattoo boat, Romantic yacht sunset, jeep safari, off road adventure, quads, Brashlyan architectural, Bulgarian historical reserve, Jeep safari Strandza, Re-discovery tour, Varna shopping, Bourgas shopping, Old Nessebar, Nessebar discovery, Khan`s tent, Khan`s tent Sunny beach, Khan`s tent night out, Windmill, Khans tent, Sunny beach trip, Sunny beach tours, Sunny beach excursion, Istanbul 2 days, Istanbul 1 day, Istanbul trips, Old city Istanbul, Istanbul by night, Bosphorus boat trip, Dracula tour, Bran Dracula castle, Peles, Sinaia, Mogoshoaia palace, Bucharest 1 day, Romania trip, Romania excursions, Sunny beach water park, Aqua Paradise Nessebar"
+robot_index = "index"
+robot_follow = "follow"
+
+[BgtaxiSettingsComponent]
+
+[ExcursionComponent]
+
+[ExcursionsListComponent]
+==
+{% set arSlider = BgtaxiSettingsComponent.getContent('slider_exp') %}
+{% set sFBLink = BgtaxiSettingsComponent.getContent('fb_link_exp') %}
+{% set arElement = ExcursionComponent.getItem %}
+{% set arElements = ExcursionsListComponent.getList %}
+<main class="main">
+    <div class="main__inner inner-wrap">
+        <div class="content-wrap">
+            <div class="content">
+                <div class="travel">
+                    <div class="travel__head">
+                        {% if arElement.image is not empty %}
+                            <div style="background-image: url('{{arElement.image}}')" class="travel__media">
+                                <!--img.travel__img(src="../assets/img/temp/pic-1.jpg", alt="bulgaria-pic")-->
+                                <div class="travel__media__ttl"><span class="travel__media__ttl-text">{{arElement.image.description}}</span></div>
+                            </div>
+                        {% endif %}
+                        <div class="travel__descr">
+                            <h1 class="travel__ttl">{{arElement.title}}</h1>
+                            {% if arElement.start_time is not empty %}
+                                {% for item in arElement.start_time %}
+                                    <time class="travel__time">{{item.item}}</time>
+                                {% endfor %}
+                            {% endif %}
+                            <div class="travel__price">{{arElement.price}}</div>
+                        </div>
+                    </div>
+                </div>
+                {{arElement.description|raw}}
+                <div class="social-links">
+                    <h6 class="social-links__ttl">Share with:</h6>
+                    <div class="social-likes">
+                        <div title="Share on Facebook" class="facebook">Facebook</div>
+                        <div title="Share on Twitter" class="twitter">Twitter</div>
+                        <div title="Share on Vkontakte" class="vkontakte">Vkontakte</div>
+                        <div class="plusone" title="Share link on Google+">Google+</div>
+                    </div>
+                </div>
+            </div>
+                <div class="sidebar">
+            {% if arElement.gallery %}
+                    <div class="gallery">
+                        {% for image in arElement.gallery %}
+                            <a href="{{image}}" style="background-image: url('{{image}}')" class="gallery__link"></a>
+                        {% endfor %}
+                    </div>
+            {% endif %}
+                    <div class="fixed-info"><a href="{{'contacts'|page}}" class="btn book" target="_blank">Book now</a>
+                    {% if arElements is not empty %}
+                    <div class="page-navigation">
+                        {% for arElementInList in arElements  %}
+                        {% if arElementInList.slug == arElement.slug %}
+                        {% if loop.index > 1 and arElements[loop.index0 - 1] is not empty %}
+                        <a href="{{'excursion'|page({slug:arElements[loop.index0 - 1].slug})}}" class="page-navigation__prev">Prev</a>
+                        {% endif %}
+                        {% if loop.index != loop.length and arElements[loop.index0 + 1] is not empty %}
+                        <a href="{{'excursion'|page({slug:arElements[loop.index0 + 1].slug})}}" class="page-navigation__next">Next</a>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+        </div>
+    </div>
+    {% partial 'footer' sFBLink=sFBLink sInstLink=sInstLink %}
+</main>

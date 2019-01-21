@@ -1,0 +1,33 @@
+doctype html
+html
+    include template/jade/head.jade
+    body
+        include template/head.jade
+        main.main
+            .main__inner.inner-wrap
+                .main__inner__head
+                    .main__inner__head__descr
+                        h1 We will help you to travel around Bulgaria
+                        p We are happy to meet you and arrange your taxi from Bourgas airport. We can guarantee best possible price for airport transfers to  Sunny beach, St Vlas or Sozopol. All our given prices are in Bulgarian levs for one way journey. Payment can be made in Euro or GBP.
+                        p Ask for quote for big groups of 8 or 12+ people. All given prices are not per person, only per group!
+                    .main__inner__head__pic(style= "background-image: url('../assets/img/temp/transfer-1.jpg')")
+                .content-wrap._pricing
+                    .content
+                        include template/pricing.jade
+                    .sidebar
+                        .fixed-info._pricing
+                            a(href="contact.html").btn.book Book now
+                            ul.fixed-info__list
+                                li Leading name
+                                li Flight numbers
+                                li Arrival / departure date and time
+                                li Party size (Adults and children)
+                                li Destination and hotel
+                                li Mobile phone number for contact
+                include template/about.jade
+                include template/footer.jade
+        include template/mobile-menu
+        include template/mobile-book-transfer
+        include template/fixed-info-mobile
+        include template/popup.jade
+        include template/jade/scripts.jade

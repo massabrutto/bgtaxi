@@ -1,0 +1,5 @@
+title: Transfers
+modelClass: Dpl\Bgtaxi\Models\Transfer
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,5 @@
+title: Excursions
+modelClass: Dpl\Bgtaxi\Models\Excursion
+nameFrom: preview_title
+toolbar:
+    buttons: reorder_toolbar

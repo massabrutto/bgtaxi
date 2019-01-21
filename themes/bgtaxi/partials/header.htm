@@ -1,0 +1,39 @@
+[viewBag]
+
+[staticMenu topMenuDesktop]
+code = "top_menu"
+
+[BgtaxiSettingsComponent]
+
+[TransfersListComponent]
+==
+{% set logo_mp = BgtaxiSettingsComponent.getContent('logo_mp') %}
+{% set arTopMenuDesktop = topMenuDesktop.menuItems %}
+{% set arTransfers = TransfersListComponent.getList %}
+<header class="head">
+    <div class="head__inner"><a href="{{'index'|page}}" class="head__logo"><img src="{{logo_mp|media}}" alt="bg-more" class="head__logo-pic"></a>
+        <div class="head__nav-btn">☰</div>
+        {% if arTopMenuDesktop is not empty %}
+            <nav class="head__nav">
+                <ul class="head__nav-list">
+                    {% for arItem in arTopMenuDesktop %}
+                        {% if arItem.code == 'transfers' %}
+                            <li class="head__nav-item drop-item">
+                                <a href="#" class="head__nav-link">Airport transfers</a>
+                                {% if arTransfers is not empty %}
+                                    <ul class="head__nav-drop">
+                                        {% for arTransfer in arTransfers %}
+                                            <li class="head__nav-drop__item"><a href="{{'transfer'|page({slug:arTransfer.slug})}}" class="head__nav-drop__link">{{arTransfer.title}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </li>
+                        {% else %}
+                            <li class="head__nav-item {{ arItem.isActive ? '_active' : '' }}"><a href="{{arItem.url}}" class="head__nav-link">{{arItem.title}}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
+        {% endif %}
+    </div>
+</header>

@@ -1,0 +1,15 @@
+doctype html
+html
+    include template/jade/head.jade
+    body
+        include template/head.jade
+        main.main
+            .main__inner.inner-wrap
+                .content-wrap
+                    include template/content.jade
+                    include template/sidebar.jade
+            include template/footer.jade
+        include template/mobile-menu
+        include template/fixed-info-mobile
+        include template/popup.jade
+        include template/jade/scripts.jade

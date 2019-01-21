@@ -1,0 +1,41 @@
+/* benefits */
+.benefits {
+  float: left;
+  width: 490px;
+  margin-bottom: 105px;
+  box-sizing: border-box;
+  color: #4f5558;
+  a {
+    color: #33ab9a;
+    border-bottom: 1px solid #aad6d0;
+    &:hover {
+      color: #dd5858;
+      border-bottom-color: #e5a5a5;
+    }
+  }
+  @media (max-width: 1199px) {
+    width: 42%;
+    padding: 0 10px;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .benefits__link {
+    margin-right: 35px;
+    font-size: 14px;
+    line-height: 1;
+    @media (max-width: 767px) {
+      display: inline-block;
+      vertical-align: bottom;
+      margin-right: 20px;
+    }
+  }
+  p {
+    margin-bottom: 25px;
+  }
+}

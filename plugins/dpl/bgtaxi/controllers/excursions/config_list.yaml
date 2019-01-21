@@ -1,0 +1,13 @@
+title: Excursions
+modelClass: Dpl\Bgtaxi\Models\Excursion
+list: $/dpl/bgtaxi/models/excursion/columns.yaml
+recordUrl: 'dpl/bgtaxi/excursions/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+defaultSort:
+    column: sort_order
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

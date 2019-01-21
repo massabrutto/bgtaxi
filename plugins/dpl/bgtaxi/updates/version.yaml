@@ -1,0 +1,92 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table dpl_bgtaxi_articles'
+    - builder_table_create_dpl_bgtaxi_articles.php
+1.0.3:
+    - 'Created table dpl_bgtaxi_insurance'
+    - builder_table_create_dpl_bgtaxi_insurance.php
+1.0.4:
+    - 'Created table dpl_bgtaxi_excursions'
+    - builder_table_create_dpl_bgtaxi_excursions.php
+1.0.5:
+    - 'Created table dpl_bgtaxi_carhire'
+    - builder_table_create_dpl_bgtaxi_carhire.php
+1.0.6:
+    - 'Created table dpl_bgtaxi_transfers'
+    - builder_table_create_dpl_bgtaxi_transfers.php
+1.0.7:
+    - 'Updated table dpl_bgtaxi_insurance'
+    - builder_table_update_dpl_bgtaxi_insurances.php
+1.0.8:
+    - 'Updated table dpl_bgtaxi_articles'
+    - builder_table_update_dpl_bgtaxi_articles.php
+1.0.9:
+    - 'Updated table dpl_bgtaxi_carhire'
+    - builder_table_update_dpl_bgtaxi_carhire.php
+1.0.10:
+    - 'Updated table dpl_bgtaxi_excursions'
+    - builder_table_update_dpl_bgtaxi_excursions.php
+1.0.11:
+    - 'Updated table dpl_bgtaxi_insurances'
+    - builder_table_update_dpl_bgtaxi_insurances_2.php
+1.0.12:
+    - 'Updated table dpl_bgtaxi_transfers'
+    - builder_table_update_dpl_bgtaxi_transfers.php
+1.0.13:
+    - 'Updated table dpl_bgtaxi_insurances'
+    - builder_table_update_dpl_bgtaxi_insurances_3.php
+1.0.14:
+    - 'Updated table dpl_bgtaxi_articles'
+    - builder_table_update_dpl_bgtaxi_articles_2.php
+1.0.15:
+    - 'Updated table dpl_bgtaxi_excursions'
+    - builder_table_update_dpl_bgtaxi_excursions_2.php
+1.0.16:
+    - 'Updated table dpl_bgtaxi_insurances'
+    - builder_table_update_dpl_bgtaxi_insurances_4.php
+1.0.17:
+    - 'Updated table dpl_bgtaxi_articles'
+    - builder_table_update_dpl_bgtaxi_articles_3.php
+1.0.18:
+    - 'Updated table dpl_bgtaxi_excursions'
+    - builder_table_update_dpl_bgtaxi_excursions_3.php
+1.0.19:
+    - 'Updated table dpl_bgtaxi_insurances'
+    - builder_table_update_dpl_bgtaxi_insurances_5.php
+1.0.20:
+    - 'Updated table dpl_bgtaxi_excursions'
+    - builder_table_update_dpl_bgtaxi_excursions_4.php
+1.0.21:
+    - 'Updated table dpl_bgtaxi_carhire'
+    - builder_table_update_dpl_bgtaxi_carhire_2.php
+1.0.22:
+    - 'Updated table dpl_bgtaxi_carhire'
+    - builder_table_update_dpl_bgtaxi_carhire_3.php
+1.0.23:
+    - 'Updated table dpl_bgtaxi_articles'
+    - builder_table_update_dpl_bgtaxi_articles_4.php
+1.0.24:
+    - 'Updated table dpl_bgtaxi_transfers'
+    - builder_table_update_dpl_bgtaxi_transfers_2.php
+1.0.25:
+    - 'Updated table dpl_bgtaxi_transfers'
+    - builder_table_update_dpl_bgtaxi_transfers_3.php
+1.0.26:
+    - 'Updated table dpl_bgtaxi_transfers'
+    - builder_table_update_dpl_bgtaxi_transfers_4.php
+1.0.27:
+    - 'Updated table dpl_bgtaxi_articles'
+    - builder_table_update_dpl_bgtaxi_articles_5.php
+1.0.28:
+    - 'Updated table dpl_bgtaxi_excursions'
+    - builder_table_update_dpl_bgtaxi_excursions_5.php
+1.0.29:
+    - 'Updated table dpl_bgtaxi_insurances'
+    - builder_table_update_dpl_bgtaxi_insurances_6.php
+1.0.30:
+    - 'Updated table dpl_bgtaxi_excursions'
+    - builder_table_update_dpl_bgtaxi_excursions_6.php
+1.0.31:
+    - 'Updated table dpl_bgtaxi_transfers'
+    - builder_table_update_dpl_bgtaxi_transfers_3.php

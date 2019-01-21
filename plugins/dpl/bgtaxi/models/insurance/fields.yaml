@@ -1,0 +1,123 @@
+fields:
+    active:
+        label: Active
+        span: left
+        type: switch
+    preview_title:
+        label: 'Preview title'
+        oc.commentPosition: ''
+        span: left
+        type: text
+    slug:
+        label: Slug
+        oc.commentPosition: ''
+        span: right
+        required: 1
+        preset:
+            field: preview_title
+            type: slug
+        type: text
+    start_time:
+        label: 'Start time'
+        oc.commentPosition: ''
+        prompt: 'Add new item'
+        span: left
+        type: repeater
+        form:
+            fields:
+                item:
+                    label: Text
+                    oc.commentPosition: ''
+                    span: full
+                    type: text
+    start_time_preview:
+        label: 'Start time preview'
+        oc.commentPosition: ''
+        prompt: 'Add new item'
+        span: right
+        type: repeater
+        form:
+            fields:
+                item:
+                    label: Text
+                    oc.commentPosition: ''
+                    span: full
+                    type: text
+tabs:
+    fields:
+        title:
+            label: Title
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: Edit
+        price:
+            label: Price
+            oc.commentPosition: ''
+            span: right
+            type: text
+            tab: Edit
+        preview_price:
+            label: 'Preview price'
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: Edit
+        preview_price_2:
+            label: 'Preview price 2'
+            oc.commentPosition: ''
+            span: right
+            type: text
+            tab: Edit
+        description:
+            label: Description
+            size: small
+            oc.commentPosition: ''
+            span: full
+            type: richeditor
+            tab: Edit
+        preview_description:
+            label: Previw description
+            oc.commentPosition: ''
+            span: full
+            type: richeditor
+            tab: Edit
+        image:
+            label: 'Image'
+            oc.commentPosition: ''
+            mode: file
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: Images
+        gallery:
+            label: 'Side gallery'
+            oc.commentPosition: ''
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: Gallery
+        seo_item_title:
+            label: Seo title
+            tab: Seo
+            type: text
+            span: full
+        seo_item_description:
+            label: Seo description
+            tab: Seo
+            type: textarea
+            size: tiny
+            span: full
+        seo_item_keywords:
+            label: Seo keywords
+            tab: Seo
+            type: textarea
+            size: tiny
+            span: full

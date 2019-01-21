@@ -1,0 +1,46 @@
+title = "articles"
+url = "/articles"
+layout = "master"
+is_hidden = 0
+meta_title = "Travel guide to Bulgaria"
+meta_description = "Useful travel guide to Bulgaria with many tips and advice on things to see and do. Travel guide to Sunny beach with personal reviews and recommendations. Various tours from Sunny beach, Nessebar, St.Vlas across the Bulgaria. Exciting excursions to Turkey and Romania. Find the best places to visit in Bulgaria with us: Nessebar, Zheravna, Veliko Tarnovo, Arbanassi, Balchik, Kavarna, Sozopol, Ropotamo River, The Stone forest, Rila monastery, Old Plovdiv, Borovets, Sofia, Kazanlak, Etara and more destinations."
+seo_keywords = "Bulgaria, Bourgas airport, Varna airport, Sofia airport, Sunny beach, St Vlas, Sozopol, Burgas, Sofia, Bansko, Borovets, Golden Sands, Albena, Obzor, holiday in Bulgaria, Sunny beach holidays, Bulgaria summer vocation, Bulgaria travel guide, Sunny beach travel guide, Sunny beach  hotels, Sunny beach trips, History tours in Bulgaria, Nessebar water park, Action aqua park, Water parks in Bulgaria, Sunny beach jeep safari, Khans tent, Bulgarian village night"
+robot_index = "index"
+robot_follow = "follow"
+
+[BgtaxiSettingsComponent]
+
+[ArticlesListComponent]
+==
+{% set arSlider = BgtaxiSettingsComponent.getContent('slider_arp') %}
+{% set sFBLink = BgtaxiSettingsComponent.getContent('fb_link_arp') %}
+{% set arElements = ArticlesListComponent.getList %}
+<div class="main__inner inner-wrap">
+    <div class="main__inner__head">
+        {% content 'articles_page_text.htm' %}
+    </div>
+    {% if arElements is not empty %}
+    <div class="excursions">
+        {% for arElement in arElements %}
+        <div class="excursions__item"><a href="{{'article'|page({slug:arElement.slug})}}" class="excursions__pic"><img src="{{arElement.image}}" class="excursions__img">
+            <div class="excursions__overlay"></div></a>
+            <div class="excursions__ttl">{{arElement.preview_title}}</div>
+            {% if arElement.start_time_preview is not empty %}
+            <div class="excursions__schedule">
+                {% for item in arElement.start_time_preview %}
+                <time class="excursions__schedule__item">{{item.item}}</time>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div class="excursions__bottom">
+                <div class="excursions__price">
+                    <div class="excursions__price__adult">{{ arElement.preview_price }}</div>
+                    <div class="excursions__price__children">{{ arElement.preview_price_2 }}</div>
+                </div><a href="{{'article'|page({slug:arElement.slug})}}" class="excursions__more">Read more</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% partial 'footer' sFBLink=sFBLink sInstLink=sInstLink %}

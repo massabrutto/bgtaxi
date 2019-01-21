@@ -1,0 +1,13 @@
+title: Transfers
+modelClass: Dpl\Bgtaxi\Models\Transfer
+list: $/dpl/bgtaxi/models/transfer/columns.yaml
+recordUrl: 'dpl/bgtaxi/transfers/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+defaultSort:
+    column: sort_order
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

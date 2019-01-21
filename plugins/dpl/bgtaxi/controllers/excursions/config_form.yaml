@@ -1,0 +1,10 @@
+name: Excursions
+form: $/dpl/bgtaxi/models/excursion/fields.yaml
+modelClass: Dpl\Bgtaxi\Models\Excursion
+defaultRedirect: dpl/bgtaxi/excursions
+create:
+    redirect: 'dpl/bgtaxi/excursions/update/:id'
+    redirectClose: dpl/bgtaxi/excursions
+update:
+    redirect: dpl/bgtaxi/excursions
+    redirectClose: dpl/bgtaxi/excursions

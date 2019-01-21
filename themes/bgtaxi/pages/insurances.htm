@@ -1,0 +1,45 @@
+title = "insurances"
+url = "/insurances"
+layout = "master"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[BgtaxiSettingsComponent]
+
+[InsuarancesListComponent]
+
+[SeoCmsPage]
+==
+{% set arSlider = BgtaxiSettingsComponent.getContent('slider_exp') %}
+{% set sFBLink = BgtaxiSettingsComponent.getContent('fb_link_exp') %}
+{% set arElements = InsuarancesListComponent.getList %}
+<div class="main__inner inner-wrap">
+    <div class="main__inner__head">
+        {% content 'insurances_page_text.htm' %}
+    </div>
+    {% if arElements is not empty %}
+    <div class="excursions">
+        {% for arElement in arElements %}
+        <div class="excursions__item"><a href="{{'insurance'|page({slug:arElement.slug})}}" class="excursions__pic"><img src="{{arElement.image}}" class="excursions__img">
+            <div class="excursions__overlay"></div></a>
+            <div class="excursions__ttl">{{arElement.preview_title}}</div>
+            {% if arElement.start_time_preview is not empty %}
+            <div class="excursions__schedule">
+                {% for item in arElement.start_time_preview %}
+                <time class="excursions__schedule__item">{{item.item}}</time>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div class="excursions__bottom">
+                <div class="excursions__price">
+                    <div class="excursions__price__adult">{{ arElement.preview_price }}</div>
+                    <div class="excursions__price__children">{{ arElement.preview_price_2 }}</div>
+                </div><a href="{{'insurance'|page({slug:arElement.slug})}}" class="excursions__more">Read more</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% partial 'footer' sFBLink=sFBLink sInstLink=sInstLink %}

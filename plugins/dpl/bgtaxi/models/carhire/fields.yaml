@@ -1,0 +1,71 @@
+fields:
+    active:
+        label: Active
+        span: left
+        type: switch
+    model:
+        label: Model
+        oc.commentPosition: ''
+        span: left
+        type: text
+    slug:
+        label: Slug
+        oc.commentPosition: ''
+        span: right
+        required: 1
+        preset:
+            field: model
+            type: slug
+        type: text
+    details:
+        label: Details
+        oc.commentPosition: ''
+        prompt: 'Add new item'
+        span: right
+        type: repeater
+        form:
+            fields:
+                deatail:
+                    label: detail
+                    oc.commentPosition: ''
+                    span: full
+                    type: text
+    image:
+        label: 'Car image'
+        oc.commentPosition: ''
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload
+    icons:
+        label: Icons
+        oc.commentPosition: ''
+        prompt: 'Add new item'
+        span: right
+        type: repeater
+        form:
+            fields:
+                types:
+                    label: 'Icon types'
+                    oc.commentPosition: ''
+                    span: left
+                    options:
+                        door: Doors
+                        passenger: Passengers
+                        transmission: Transmission
+                        conditioner: Conditioner
+                        baggage: Baggage
+                    type: dropdown
+                count:
+                    label: Count
+                    oc.commentPosition: ''
+                    span: right
+                    type: text
+                tooltip:
+                    label: Tooltip
+                    oc.commentPosition: ''
+                    span: full
+                    type: text

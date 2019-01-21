@@ -1,0 +1,11 @@
+name: Transfers
+modelClass: Dpl\Bgtaxi\Models\Transfer
+form: $/dpl/bgtaxi/models/transfer/fields.yaml
+defaultRedirect: dpl/bgtaxi/transfers
+create:
+    redirect: 'dpl/bgtaxi/transfers/update/:id'
+    redirectClose: dpl/bgtaxi/transfers
+update:
+    redirect: dpl/bgtaxi/transfers
+    redirectClose: dpl/bgtaxi/transfers
+preview: {  }

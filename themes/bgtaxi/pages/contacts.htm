@@ -1,0 +1,75 @@
+title = "contacts"
+url = "/contacts"
+layout = "master"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[BgtaxiSettingsComponent]
+
+[MailComponent]
+
+==
+{% set title_cntp = BgtaxiSettingsComponent.getContent('title_cntp') %}
+{% set contact_form_title_cntp = BgtaxiSettingsComponent.getContent('contact_form_title_cntp') %}
+{% set inst_link_cntp = BgtaxiSettingsComponent.getContent('inst_link_cntp') %}
+{% set fb_link_cntp = BgtaxiSettingsComponent.getContent('fb_link_cntp') %}
+{% set vk_link_cntp = BgtaxiSettingsComponent.getContent('vk_link_cntp') %}
+{% set email_link_cntp = BgtaxiSettingsComponent.getContent('email_link_cntp') %}
+{% set phines_left_title_cntp = BgtaxiSettingsComponent.getContent('phines_left_title_cntp') %}
+{% set phines_left_right_cntp = BgtaxiSettingsComponent.getContent('phines_left_right_cntp') %}
+{% set phones_cntp_left = BgtaxiSettingsComponent.getContent('phones_cntp_left') %}
+{% set phones_cntp_right = BgtaxiSettingsComponent.getContent('phones_cntp_right') %}
+<main class="main">
+    <div class="main__inner inner-wrap">
+        <div class="main__inner__head">
+            <h1>{{title_cntp}}</h1>
+        </div>
+        <div class="contact">
+            <div class="contact__head">
+                <div class="contact__head-item _phone">
+                    <div class="contact__head-item__ttl _eng">{{phines_left_title_cntp}}</div>
+                    {% if phones_cntp_left is not empty %}
+                        {% for item in phones_cntp_left %}
+                            <div class="contact__head-item__text">{{item.phone}}{% if item.viber %}<i class="contact__head-item__pic"></i>{% endif %}</div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="contact__head-item _phone">
+                    <div class="contact__head-item__ttl _rus">{{phines_left_right_cntp}}</div>
+                    {% if phones_cntp_right is not empty %}
+                        {% for item in phones_cntp_right %}
+                            <div class="contact__head-item__text">{{item.phone}}{% if item.viber %}<i class="contact__head-item__pic"></i>{% endif %}</div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="contact__head-item _email">
+                    <div class="contact__head-item__ttl">E-mail:</div><a href="mailto:{{email_link_cntp}}" class="contact__head-item__text">{{email_link_cntp}}</a>
+                </div>
+            </div>
+            <form id="contactForm" class="contact__form" method="post" action="/contact">
+                <h4 class="contact__form-ttl">{{contact_form_title_cntp}}</h4>
+                <div class="contact__form-col">
+                    <div class="contact__form-row">
+                        <input type="text" name="name" placeholder="Name" required class="contact__form-input name-valid">
+                    </div>
+                    <div class="contact__form-row">
+                        <input type="email" name="email" placeholder="Email" required class="contact__form-input email-vali">
+                    </div>
+                    <div class="contact__form-row">
+                        <input type="text" name="phone" placeholder="Phone" required class="contact__form-input num-valid">
+                    </div>
+                </div>
+                <div class="contact__form-col">
+                    <div class="contact__form-row">
+                        <textarea name="message2" placeholder="Message" required class="contact__form-textarea text-valid"></textarea>
+                    </div>
+                    <div class="contact__form-row">
+                        <button class="contact__form-btn">Write to us</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+{% partial 'footer' sFBLink=fb_link_cntp sInstLink=inst_link_cntp %}

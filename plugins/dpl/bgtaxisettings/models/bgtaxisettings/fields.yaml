@@ -1,0 +1,336 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        inst_link_mp:
+            tab: Main page settings
+            span: left
+            label: Instagram link
+
+        fb_link_mp:
+            tab: Main page settings
+            span: right
+            label: Facebook link
+
+        logo_mp:
+            tab: Main page settings
+            span: left
+            type: mediafinder
+            mode: image
+            label: Logo
+
+        title_mp:
+            tab: Main page settings
+            span: right
+            label: Title
+
+        slider_mp:
+            tab: Main page settings
+            type: repeater
+            span: left
+            form:
+                fields:
+                    slider_image:
+                        type: mediafinder
+                        mode: image
+
+        airport_ttl_mp:
+            tab: Main page settings
+            span: right
+            type: text
+            label: Airport block title
+
+        airport_slogan_mp:
+            tab: Main page settings
+            span: right
+            type: text
+            label: Airport block slogan
+
+        airport_discount_mp:
+            tab: Main page settings
+            span: right
+            type: text
+            label: Airport block discount
+
+        airport_href_mp:
+            tab: Main page settings
+            span: right
+            type: text
+            label: Airport block link
+
+        airport_image_mp:
+            tab: Main page settings
+            span: right
+            type: mediafinder
+            mode: image
+            label: Airport block discount
+
+        excursions_ttl_mp:
+            tab: Main page settings
+            span: right
+            type: text
+            label: Excursions block title
+
+        excursions_slogan_mp:
+            tab: Main page settings
+            span: right
+            type: text
+            label: Excursions block slogan
+
+        excursions_discount_mp:
+            tab: Main page settings
+            span: right
+            type: text
+            label: Excursions block discount
+
+        excursions_href_mp:
+            tab: Main page settings
+            span: right
+            type: text
+            label: Excursions block link
+
+        excursions_image_mp:
+            tab: Main page settings
+            span: right
+            type: mediafinder
+            mode: image
+            label: Excursions block discount
+
+        carhire_ttl_mp:
+            tab: Main page settings
+            span: right
+            type: text
+            label: Car Hire block title
+
+        carhire_slogan_mp:
+            tab: Main page settings
+            span: right
+            type: text
+            label: Car Hire block slogan
+
+        carhire_discount_mp:
+            tab: Main page settings
+            span: right
+            type: text
+            label: Car Hire block discount
+
+        carhire_href_mp:
+            tab: Main page settings
+            span: right
+            type: text
+            label: Car Hire block link
+
+        carhire_image_mp:
+            tab: Main page settings
+            span: right
+            type: mediafinder
+            mode: image
+            label: Car Hire block discount
+
+        inst_link_trp:
+            tab: Transfer page settings
+            span: left
+            label: Instagram link
+
+        fb_link_trp:
+            tab: Transfer page settings
+            span: right
+            label: Facebook link
+
+        side_title_trp:
+            tab: Transfer page settings
+            span: left
+            label: Side list title
+            type: text
+
+        side_list_trp:
+            tab: Transfer page settings
+            type: repeater
+            span: right
+            label: Side list
+            form:
+                fields:
+                    line:
+                        type: text
+
+        footer_list_title_tpr:
+            tab: Transfer page settings
+            span: right
+            type: text
+            label: Footer list title
+
+        footer_list_list_trp:
+            tab: Transfer page settings
+            type: repeater
+            span: right
+            label: Footer list
+            form:
+                fields:
+                    line:
+                        type: text
+
+        inst_link_chp:
+            tab: Carhire page settings
+            span: left
+            label: Instagram link
+
+        fb_link_chp:
+            tab: Carhire page settings
+            span: right
+            label: Facebook link
+
+        popup_link_chp:
+            tab: Carhire page settings
+            span: left
+            label: Popup link text
+
+        side_title_chp:
+            tab: Carhire page settings
+            span: left
+            label: Side list title
+            type: text
+
+        side_chp:
+            tab: Carhire page settings
+            type: repeater
+            span: right
+            label: Side list
+            form:
+                fields:
+                    item:
+                        type: text
+
+        inst_link_exp:
+            tab: Excursions page settings
+            span: left
+            label: Instagram link
+
+        fb_link_exp:
+            tab: Excursions page settings
+            span: right
+            label: Facebook link
+
+        inst_link_insp:
+            tab: Insuaranses page settings
+            span: left
+            label: Instagram link
+
+        fb_link_insp:
+            tab: Insuaranses page settings
+            span: right
+            label: Facebook link
+
+        inst_link_arp:
+            tab: Articles page settings
+            span: left
+            label: Instagram link
+
+        fb_link_arp:
+            tab: Articles page settings
+            span: right
+            label: Facebook link
+
+        title_cntp:
+            tab: Contacts settings
+            span: left
+            label: Title
+
+        contact_form_title_cntp:
+            tab: Contacts settings
+            span: right
+            label: Contact form title
+
+        inst_link_cntp:
+            tab: Contacts settings
+            span: left
+            label: Instagram link
+
+        fb_link_cntp:
+            tab: Contacts settings
+            span: right
+            label: Facebook link
+
+        vk_text_cntp:
+            tab: Contacts settings
+            span: left
+            label: Vkontakte link text
+
+        vk_link_cntp:
+            tab: Contacts settings
+            span: left
+            label: Vkontakte link
+
+        email_link_cntp:
+            tab: Contacts settings
+            span: right
+            label: Email link
+
+        phines_left_title_cntp:
+            tab: Contacts settings
+            span: left
+            label: Phones english column title
+
+        phines_left_right_cntp:
+            tab: Contacts settings
+            span: right
+            label: Phones russian column title
+
+        phones_cntp_left:
+            tab: Contacts settings
+            type: repeater
+            span: left
+            label: Phones english column
+            form:
+                fields:
+                    phone:
+                        type: text
+                    viber:
+                        type: switch
+
+        phones_cntp_right:
+            tab: Contacts settings
+            type: repeater
+            span: right
+            label: Phones russian column
+            form:
+                fields:
+                    phone:
+                        type: text
+                    viber:
+                        type: switch
+
+        left_footer_social_image:
+            tab: Common settings
+            span: left
+            type: mediafinder
+            mode: image
+            label: Left footer social link image
+
+        right_footer_social_image:
+            tab: Common settings
+            span: right
+            type: mediafinder
+            mode: image
+            label: Right footer social link image
+
+        contact_emails:
+            tab: Common settings
+            span: full
+            type: text
+            label: Contact emails
+
+        _ga:
+            tab: Common settings
+            span: full
+            type: textarea
+            size: large
+            label: Google analytics
+
+        _ym:
+            tab: Common settings
+            span: full
+            type: textarea
+            size: large
+            label: Yandex Metrix

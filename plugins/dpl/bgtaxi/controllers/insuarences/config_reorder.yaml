@@ -1,0 +1,5 @@
+title: Insuarences
+modelClass: Dpl\Bgtaxi\Models\Insurance
+nameFrom: preview_title
+toolbar:
+    buttons: reorder_toolbar

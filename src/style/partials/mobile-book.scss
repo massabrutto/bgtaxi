@@ -1,0 +1,44 @@
+/* mobile-book */
+.mobile-book {
+  display: none;
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  background: rgba(52, 67, 76, 0.95);
+  z-index: 5;
+  color: #ffffff;
+  .mobile-book__close {
+    position: absolute;
+    padding: 5px 15px;
+    top: 0;
+    right: 0;
+    font-size: 28px;
+    z-index: 2;
+    background: none;
+    border: none;
+    color: #ffffff;
+  }
+  .mobile-book__sub-title {
+    margin-top: 15px;
+  }
+  .mobile-book__phone {
+    margin: 0;
+  }
+  .contact__form {
+    @media (max-width: 767px) {
+      padding: 20px 0 30px;
+      margin: 0;
+      background: none;
+    }
+  }
+  .contact__form-btn {
+    @media (max-width: 767px) {
+      padding: 11px 48px;
+    }
+  }
+
+}

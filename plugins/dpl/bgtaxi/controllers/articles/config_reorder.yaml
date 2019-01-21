@@ -1,0 +1,5 @@
+title: Articles
+modelClass: Dpl\Bgtaxi\Models\Article
+nameFrom: preview_title
+toolbar:
+    buttons: reorder_toolbar

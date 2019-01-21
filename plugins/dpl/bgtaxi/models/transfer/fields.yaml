@@ -1,0 +1,65 @@
+fields:
+    active:
+        label: Active
+        span: left
+        type: switch
+    title:
+        label: Title
+        oc.commentPosition: ''
+        span: left
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        oc.commentPosition: ''
+        span: right
+        required: 1
+        preset:
+            field: title
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: large
+        oc.commentPosition: ''
+        span: full
+        type: richeditor
+    link_text:
+        label: 'Link text'
+        oc.commentPosition: ''
+        span: full
+        type: text
+    content:
+        label: Content
+        size: giant
+        oc.commentPosition: ''
+        span: full
+        type: richeditor
+    image:
+        label: 'Top image'
+        oc.commentPosition: ''
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+        tab: Images
+    seo_item_title:
+        label: Seo title
+        tab: Seo
+        type: text
+        span: full
+    seo_item_description:
+        label: Seo description
+        tab: Seo
+        type: textarea
+        size: tiny
+        span: full
+    seo_item_keywords:
+        label: Seo keywords
+        tab: Seo
+        type: textarea
+        size: tiny
+        span: full

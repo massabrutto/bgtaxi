@@ -1,0 +1,10 @@
+name: Carhires
+form: $/dpl/bgtaxi/models/carhire/fields.yaml
+modelClass: Dpl\Bgtaxi\Models\Carhire
+defaultRedirect: dpl/bgtaxi/carhires
+create:
+    redirect: 'dpl/bgtaxi/carhires/update/:id'
+    redirectClose: dpl/bgtaxi/carhires
+update:
+    redirect: dpl/bgtaxi/carhires
+    redirectClose: dpl/bgtaxi/carhires
