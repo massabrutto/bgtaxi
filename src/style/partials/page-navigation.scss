@@ -1,19 +1,10 @@
 .page-navigation {
   text-align: center;
-  @media (max-width: 767px) {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    left: 0;
-    right: 0;
-    bottom: 20px;
-    font-size: 16px;
-  }
   .page-navigation__prev,
   .page-navigation__next {
     display: inline-block;
     position: relative;
-    margin: 0 25px;
+    margin: 0 23px;
     color: #33ab9a;
     border-bottom: 1px solid #aad6d0;
     line-height: 1;
@@ -53,5 +44,15 @@
       border-width: 2px 2px 0 0;
       transform: rotate(45deg);
     }
+  }
+  @media (max-width: 767px) {
+    visibility: visible;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    font-size: 16px;
   }
 }
