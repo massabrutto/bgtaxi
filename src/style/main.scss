@@ -66,6 +66,14 @@ body {
     font: 14px/1.5 Calibri, Helvetica, sans-serif;
   }
 }
+html,
+body {
+  &.slideout-open {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }
+}
 .main {
   //display: flex;
   //min-height: 100vh;
@@ -73,6 +81,20 @@ body {
   //padding-bottom: 260px;
   box-sizing: border-box;
   background: #eff4f7;
+  transition: transform 0.3s;
+  &._slide-is-open {
+    transform: translateX(200px);
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.7);
+      z-index: 3;
+    }
+  }
   .main__inner {
     //flex: 1;
     min-height: calc(100vh - 272px);

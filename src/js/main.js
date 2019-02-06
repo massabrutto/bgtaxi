@@ -49,6 +49,9 @@ app.fn.SlideOut = function(elem) {
   self.$window = $(window);
   self.$headNavBtn = $('.head__nav-btn');
   self.$head = $('.head');
+  self.$html = $('html');
+  self.$main = $('.head + .main');
+  self.$mainOverlay = $('.main._slide-is-open');
   self.$pricingTableWrap = $('.pricing__table-wrap');
   self.windowScrollTop = 0;
   self.$mobileNavLink = $('.mobile-nav__link');
@@ -85,7 +88,13 @@ app.fn.SlideOut = function(elem) {
   });
 
   self.$headNavBtn.on('click', function() {
-    self.slideout.toggle();
+    // self.slideout.toggle();
+    self.$main.toggleClass('_slide-is-open');
+    self.$html.toggleClass('slideout-open');
+  });
+  self.$main.after().on('click', function() {
+    self.$main.removeClass('_slide-is-open');
+    self.$html.removeClass('slideout-open');
   });
 
   //   self.$pricingTableWrap.on('touchstart', function() {
